@@ -1,4 +1,5 @@
 import "./App.css";
+import Card from "./Card";
 
 function App() {
   const data = [
@@ -11,9 +12,16 @@ function App() {
 
   return (
     <div className="App">
-      {data.map((obj) => {
-        return <p key={obj.position}>{obj.title}</p>;
-      })}
+      <div className="CardGroup">
+        {data.map((obj) => {
+          return (
+            <Card
+              title={obj.title}
+              image={`./images/cat${obj.position}.jpeg`}
+            ></Card>
+          );
+        })}
+      </div>
     </div>
   );
 }
