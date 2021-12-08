@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
+  const data = [
+    { type: "bank-draft", title: "Bank Draft", position: 0 },
+    { type: "bill-of-lading", title: "Bill of Lading", position: 1 },
+    { type: "invoice", title: "Invoice", position: 2 },
+    { type: "bank-draft-2", title: "Bank Draft 2", position: 3 },
+    { type: "bill-of-lading-2", title: "Bill of Lading 2", position: 4 },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {data.map((obj) => {
+        return <p key={obj.position}>{obj.title}</p>;
+      })}
     </div>
   );
 }
